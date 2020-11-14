@@ -29,6 +29,11 @@ Documentation and tools for enabling remote DJs to perform back to back from dif
 1. ZeroTier provides a virtual local network for VBAN and VirtualHere to reduce the need to set up complex firewall and NAT routing between DJs
 1. DJ software needs to provide a way for multiple controllers to control the same decks.
 
+## Observations
+
+* With the mixing computer and all DJs within 50 miles, DJs reported that Slicer mode was challenging but usable
+* With the mixing computer and DJ approximately 800 miles away, DJs reported that beatmatching and EQ/fader transitions were quite usable, but Hot Cues were possibly too hard.
+
 ## Tuning
 
 ### Virtual DJ
