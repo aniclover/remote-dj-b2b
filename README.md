@@ -2,6 +2,12 @@
 
 Documentation and tools for enabling remote DJs to perform back to back from different locations, distanced miles (or kilometers) away from each other, with the performance streamed over the Internet
 
+## Example Shows
+YouTube links to shows using the remote b2b setup
+ * [DJxDJ+AniCLover](https://www.youtube.com/watch?v=63eZQsSU2_c) - Trans-pacific Japan-US B2B (whole B2B show)
+ * [Ani-Thing Goes: chi b2b zalas](https://youtu.be/HW4R1Fk42_M?t=6548) - Cross-country California-Georgia B2B (single B2B set)
+ * [The Final Shelter: DatGai b2b maguro](https://youtu.be/C2WdLpFHUGc?t=10324) - Trans-pacific Japan-US B2B (single B2B set)
+
 ## Software
 
 * [Parsec](https://parsecgaming.com/) - Low latency screen sharing and control tool designed for gaming
