@@ -13,6 +13,7 @@ YouTube links to shows using the remote b2b setup
 * [Parsec](https://parsecgaming.com/) - Low latency screen sharing and control tool designed for gaming
 * [Voicemeeter Banana](https://vb-audio.com/Voicemeeter/banana.htm) - Software audio mixer with multi-device, ASIO, and low-latency network audio (VBAN)
 * [VirtualHere](https://www.virtualhere.com/) - Present USB devices remotely over a network
+* [rtpMIDI](https://www.tobias-erichsen.de/software/rtpmidi.html) - Present MIDI devices remotely over a network (more reliable and less control latency if VDJ supports your controller this way)
 * [Zerotier](https://www.zerotier.com/) - Low latency peer-to-peer VPN
 * [Virtual DJ](https://www.virtualdj.com/) - DJ software, in theory any software which can handle multiple USB controllers will work.
 * [OBS Studio](https://obsproject.com/) - Live stream broadcasting
@@ -32,6 +33,7 @@ YouTube links to shows using the remote b2b setup
 1. Shared display and mouse/keyboard control of the mixing computer using Parsec. DJs will primarily use their controllers and only use the viewing capabilities for song selection and audio displays.
 1. Master and headphone outputs to virtual ASIO devices in Voicemeeter. Voicemeeter can then route the audio out over VBAN to the DJs. DJs must also be running Voicemeeter to receive the audio streams and then route them to local audio devices. DJs with multiple audio interfaces can route master and headphone audio to separate outputs.
 1. VirtualHere Server will publish local DJ USB devices to the mixing computer, which will use VirtualHere client to connect the DJ controllers
+1. rtpMIDI can publish a local MIDI device under an arbitrary name to the mixing computer, which will then become visible to VDJ as a midi device. Controller type matching is entirely controlled by string matching the MIDI device name.
 1. ZeroTier provides a virtual local network for VBAN and VirtualHere to reduce the need to set up complex firewall and NAT routing between DJs
 1. DJ software needs to provide a way for multiple controllers to control the same decks.
 
@@ -56,3 +58,9 @@ Some tuning is required across all of the computers involved.
 * WDM Input Exclusive Mode should be set to Yes
 * Engine mode should be Swift
 * Preferred Sample Rate should be 48000
+
+### rtpMIDI vs. VirtualHere
+
+rtpMIDI is built into MacOS and available via download for Windows. VirtualDJ supports using MIDI rather than USB HID for certain older controllers, and determines the device mapping based on the name of the MIDI device (for example, the DDJ-SB is supported by naming the RTP MIDI device "DDJ-SB")
+
+Unfortunately, newer controllers are only supported via USB HID mode in VDJ, even though they mostly still do have MIDI interfaces as well. There is a mapping in this repo for the DDJ-400 that lets you bring in up to 8 DDJ-400 controllers remotely over rtpMIDI, and is currently the most reliable way to have a remote b2b. rtpMIDI controllers and VirtualHere controllers can coexist, so you could have a setup with multiple DDJ-400's over rtpMIDI combined with other controllers.
